@@ -1,0 +1,332 @@
+HW_1 Apre
+
+I
+
+a)
+x1 = (1, 3, 4, 6)
+x2 = (-30, -10, 0, 20)
+
+pearsons correlation coefficient (rxy)
+rxy = (Σ(x1 - média(x1))(x2 - média(x2))) / [√(Σ(x1 - média(x1))^2 * Σ(x2 - média(x2))^2)]
+média(x1)= 3.5
+média(x2)= -5
+
+Σ(x1 - média(x1))^2 = (1-3.5)^2 + (3-3.5)^2 + (4-3.5)^2 + (6-3.5)^2 = 13
+
+Σ(x2 - média(x2))^2 = (-30-(-5))^2 + (-10-(-5))^2 + (0-(-5))^2 + (20-(-5))^2 = 1300
+
+Σ(x1 - média(x1))(x2 - média(x2)) = (1-3.5)*(-30-(-5)) + (3-3.5)*(-10-(-5)) + (4-3.5)*(0-(-5)) + (6-3.5)*(20-(-5)) = 130
+
+rxy = 130/√(13*1300) = 1
+
+
+Spearman's rank coefficient (rs)
+
+rs = 1 - (6Σdi^2) / n(n^2 - 1) , n = 4 (#elementos do conjunto x1/x2)
+
+x1(ordenado) = (1,2,3,4)
+x2(ordenado) = (1,2,3,4)
+di = x1i(ordenado) - x2i(ordenado)
+ 
+Σdi^2 = 0
+
+rs = 1 - (6*0) / 4(4^2 - 1) = 1
+
+rs igual a rxy pois ambos os conjutos crescem (quando um valor do conjunto x1 aumenta o valor na mesma posição de x2 também aumenta) pois rs é 1 e fazem-no de forma consistente como é possivel perceber pelo valor 1 do resultado do coeficient de correlação de pearson
+
+b) 
+x1 = (1, 3, 4, 6)
+x2 = (-3, -0.5, 29, 30)
+
+pearsons correlation coefficient (rxy)
+rxy = (Σ(x1 - média(x1))(x2 - média(x2))) / [√(Σ(x1 - média(x1))^2 * Σ(x2 - média(x2))^2)]
+média(x1)= 3.5
+média(x2)= 13.875
+
+Σ(x1 - média(x1))^2 = (1-3.5)^2 + (3-3.5)^2 + (4-3.5)^2 + (6-3.5)^2 = 13
+
+Σ(x2 - média(x2))^2 = (-3-13.875)^2 + (-0.5-13.875)^2 + (29-13.875)^2 + (30-13.875)^2 = 980.1875
+
+Σ(x1 - média(x1))(x2 - média(x2)) = (1-3.5)*(-3-13.875) + (3-3.5)*(-0.5-13.875) + (4-3.5)*(29-13.875) + (6-3.5)*(30-13.875) = 97.75
+
+rxy = 97.25/√(13*980.1875) = 0.8615
+
+
+Spearman's rank coefficient (rs)
+
+rs = 1 - (6Σdi^2) / n(n^2 - 1) , n = 4 (#elementos do conjunto x1/x2)
+
+x1(ordenado) = (1,2,3,4)
+x2(ordenado) = (1,2,3,4)
+di = x1i(ordenado) - x2i(ordenado)
+ 
+Σdi^2 = 0
+
+rs = 1 - (6*0) / 4(4^2 - 1) = 1
+
+rs difrente de rxy pois ambos os conjutos crescem (quando um valor do conjunto x1 aumenta o valor na mesma posição de x2 também aumenta) pois rs é 1 mas não de forma consistente como é possivel perceber pelo valor <1 do resultado do coeficient de correlação de pearson
+
+
+II
+
+a)
+
+F1 F2 F3 F4 Output
+c  a  b  x    n
+a  a  c  a    t
+a  b  b  a    t
+c  b  c  x    m
+a  b  b  c    f
+
+
+p(n) = 1/5
+p(t) = 2/5
+p(m) = 1/5
+p(f) = 1/5
+
+I(Output) = - (1/5) * log2(1/5) - (2/5) * log2(2/5) - (1/5) * log2(1/5) - (1/5) * log2(1/5) = 1.922 bit
+
+Gain(F1) = I(Output) - [(2/5) * I(S_c) + (3/5) * I(S_a)] = 0.9712 bit
+I(S_c) =  - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1 bit
+I(S_a) =  - (1/3) * log2(1/3) - (2/3) * log2(2/3) = 0.918 bit
+
+Gain(F2) = I(Output) - [(2/5) * I(S_a) + (3/5) * I(S_b)] = 0.571 bit
+I(S_a) =  - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1 bit
+I(S_b) =  - (1/3) * log2(1/3) - (1/3) * log2(1/3) - (1/3) * log2(1/3) = 1.585 bit
+
+Gain(F3) = I(Output) - [(3/5) * I(S_b) + (2/5) * I(S_c)] = 0.571 bit
+I(S_c) =  - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1 bit
+I(S_b) =  - (1/3) * log2(1/3) - (1/3) * log2(1/3) - (1/3) * log2(1/3) = 1.585 bit
+
+Gain(F4) = I(Output) - [(2/5) * I(S_a) + (1/5) * I(S_c) + (2/5) * I(S_x)] = 1.522 bit
+I(S_x) =  - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1 bit
+I(S_a) =  0 bit
+I(S_c) =  0 bit
+
+O atributo com maior ganho é o F4 sendo por isso a root da decision tree
+
+
+b)
+F4 é a root da decision tree
+
+For a:
+
+F1 F2 F3 Output
+a  a  c    t
+a  b  b    t
+
+
+For c:
+
+F1 F2 F3 Output
+a  b  b    f
+
+
+For x:
+
+F1 F2 F3 Output
+c  a  b    n
+c  b  c    m
+
+Gain(F1) = I(Output) - [1 * I(S_c)] = 0.992 bit
+I(S_c) =  - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1 bit
+
+Gain(F2) = I(Output) - [(1/2) * (S_a) + (1/2) * (S_b)] = 1.922 bit
+I(S_a) = 0 bit
+I(S_b) = 0 bit
+
+Gain(F3) = I(Output) - [(1/2) * I(S_b) + (1/2) * I(S_c)] = 1.992 bit
+I(S_c) = 0 bit
+I(S_b) = 0 bit
+
+Como Gain(F2) e Gain(F3) são iguais vou escolher de forma aleatóra um deles (F2)
+
+For F2:
+
+For a:
+
+F1 F3 Output
+c  c    m
+
+For b:
+
+F1 F3 Output
+c  c    m
+
+
+Decision Tree:
+
+
+	   F4
+	  /|\
+	 / | \
+    /  |  \
+   /   |   \
+  a    c    x
+ /     |     \
+t      f	 F2
+			 /\
+			a  b
+		   /    \
+		  n      m
+c)
+
+z = (n,t,t,m,f)
+^z = (n,t,t,m,f)
+
+	n	t	m	f
+	
+n	1	0	0	0
+
+t	0	2	0	0
+
+m	0	0	1	0
+
+f	0	0	0	1
+
+
+III
+a)
+
+code:
+
+import matplotlib.pyplot as plt
+from sklearn import metrics, datasets, tree
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+# 1. load 
+wine = datasets.load_wine()
+X, y = wine.data, wine.target
+
+# partition data with train_test_spli
+
+#trian_size, sratify
+
+value= #0.2,0.5,0.7
+gn=36
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=value,stratify=y,random_state=gn)
+
+#radom_state: Controls the shuffling applied to the data before applying the split. 
+#Pass an int for reproducible output across multiple function calls
+#Popular integer random seeds are 0 and 42
+
+print("train size:",len(X_train),"\ntest size:",len(X_test))
+
+# Instantiate the decision tree classifier with max_depth=3
+clf = DecisionTreeClassifier(max_depth=10000)
+
+# Fit the classifier to the training data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the testing data
+y_pred = clf.predict(X_test)
+
+# Evaluate the performance of the model
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+# Fit the classifier to the training data
+clf.fit(X_train, y_train)
+
+# Get the depth of the tree
+depth = clf.tree_.max_depth
+print("Depth of the tree:", depth)
+
+
+value = 0.2
+
+train size: 35
+test size: 143
+depth: 3
+accuracy: 0.8951048951048951
+
+
+value = 0.5
+
+train size: 89
+test size: 89
+depth: 5
+accuracy: 0.9325842696629213
+
+
+value = 0.7
+
+train size: 124
+test size: 54
+depth: 5
+accuracy: 0.9444444444444444
+
+b)
+
+code:
+
+
+import matplotlib.pyplot as plt
+from sklearn import datasets, tree
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+SEED = 42
+
+# 1. load 
+wine = datasets.load_wine()
+X, y = wine.data, wine.target
+
+# partition data with train_test_split
+
+# train_size, stratify
+
+value = 0.7
+gn = 36
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=value, stratify=y, random_state=gn)
+
+# random_state: Controls the shuffling applied to the data before applying the split.
+# Pass an int for reproducible output across multiple function calls
+# Popular integer random seeds are 0 and 42
+
+print("train size:", len(X_train), "\ntest size:", len(X_test))
+
+# Instantiate the decision tree classifier with max_depth=3
+clf = DecisionTreeClassifier(max_depth=3)
+
+# Fit the classifier to the training data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the testing data
+y_pred = clf.predict(X_test)
+
+# Evaluate the performance of the model
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+# Get the depth of the tree
+depth = clf.tree_.max_depth
+print("Depth of the tree:", depth)
+
+# 2. learn classifier, random_state=SEED
+predictor = DecisionTreeClassifier(criterion='entropy', random_state=SEED)
+predictor.fit(X_train, y_train)
+
+# 3. plot classifier
+figure = plt.figure(figsize=(12, 6))
+tree.plot_tree(predictor, feature_names=wine.feature_names, class_names=[str(i) for i in wine.target_names], filled=True)
+plt.show()
+
+figure.savefig("decision_tree.png")
+
+
+c)
+
+code:
+
+mesmo que o anterior mas sem o comando stratify=y
+
+
+O parâmetro stratify na função train_test_split permite dividir um conjunto de dados em conjuntos de training e test, garantindo que as proporções de cada classe sejam as mesmas em ambos os conjuntos.
+Sem o uso de stratify=y, a distribuição das classes nos conjuntos de training e test pode ser diferente da do conjunto de dados original, podendo levar a resultados biased, principalmente ao lidar com conjuntos de dados desequilibrados.
